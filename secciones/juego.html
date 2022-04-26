@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina Quién || Juego</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script src="https://kit.fontawesome.com/53ebc3b85f.js" crossorigin="anonymous"></script>
+    
+</head>
+<body class="dark">
+                
+    <section class="juegoTotal">
+        <header class="juegoIzquierda">
+            <img class="tituloIzquierda" src="../imagenes/titulo.png">
+        </header>
+        <section class="juegoMedio">
+            <img src="../imagenes/tablero.png" class="miTablero">
+            <div class="tarjetas light">
+                <div class="emojiJuego rick">
+                    <p>RICK</p>
+                </div>
+                <div class="emojiJuego elias">
+                    <p>ELIAS</p>
+                </div>
+                <div class="emojiJuego phillip">
+                    <p>PHILLIP</p>
+                </div>
+                <div class="emojiJuego frankie">
+                    <p>FRANKIE</p>
+                </div>
+                <div class="emojiJuego emma">
+                    <p>EMMA</p>
+                </div>
+                <div class="emojiJuego roxy">
+                    <p>ROXY</p>
+                </div>
+                <div class="emojiJuego mark">
+                    <p>MARK</p>
+                </div>
+                <div class="emojiJuego stuart">
+                    <p>STUART</p>
+                </div>
+                <div class="emojiJuego nick">
+                    <p>NICK</p>
+                </div>
+                <div class="emojiJuego mary">
+                    <p>MARY</p>
+                </div>
+                <div class="emojiJuego courtney">
+                    <p>COURTNEY</p>
+                </div>
+                <div class="emojiJuego mikey">
+                    <p>MIKEY</p>
+                </div>
+                <div class="emojiJuego gerard">
+                    <p>GERARD</p>
+                </div>
+                <div class="emojiJuego ramona">
+                    <p>RAMONA</p>
+                </div>
+                <div class="emojiJuego patrick">
+                    <p>PATRICK</p>
+                </div>
+                <div class="emojiJuego ruby">
+                    <p>RUBY</p>
+                </div>
+                <div class="emojiJuego penny">
+                    <p>PENNY</p>
+                </div>
+                <div class="emojiJuego jenny">
+                    <p>JENNY</p>
+                </div>
+                <div class="emojiJuego thomas">
+                    <p>THOMAS</p>
+                </div>
+                <div class="emojiJuego rhonda">
+                    <p>RHONDA</p>
+                </div>
+                
+            </div>
+            
+            <div class="selectPregunta" >
+                <p>ELIJA UNA PREGUNTA</p>
+            </div>
+
+        </section>
+        
+        <section class="juegoDerecha">
+            <div class="juegoCPU">
+                <div>
+                    <div>
+                        <h3>EMOJI OPONENTE</h3>
+                    </div>
+                    <div class="elegidoCPU"></div>
+                </div>
+                <div class="tableroYTituloCPU">
+                    <h3>TABLERO OPONENTE</h3>
+                    <div class="tableroCPU">
+                            <div class="emojiCPU rickCPU"></div>
+                            <div class="emojiCPU eliasCPU"></div>
+                            <div class="emojiCPU phillipCPU"></div>
+                            <div class="emojiCPU frankieCPU"></div>
+                            <div class="emojiCPU emmaCPU"></div>
+                            <div class="emojiCPU roxyCPU"></div>
+                            <div class="emojiCPU markCPU"></div>
+                            <div class="emojiCPU stuartCPU"></div>
+                            <div class="emojiCPU nickCPU"></div>
+                            <div class="emojiCPU maryCPU"></div>
+                            <div class="emojiCPU courtneyCPU"></div>
+                            <div class="emojiCPU mikeyCPU"></div>
+                            <div class="emojiCPU gerardCPU"></div>
+                            <div class="emojiCPU ramonaCPU"></div>
+                            <div class="emojiCPU patrickCPU"></div>
+                            <div class="emojiCPU rubyCPU"></div>
+                            <div class="emojiCPU pennyCPU"></div>
+                            <div class="emojiCPU jennyCPU"></div>
+                            <div class="emojiCPU thomasCPU"></div>
+                            <div class="emojiCPU rhondaCPU"></div>                           
+                    </div>
+                </div>
+            </div>
+            <img src="../imagenes/vs.png" alt="versus">
+            <div>
+                <h3 class="emojiUser"></h3>
+                <div class="miElegido"></div>  
+            </div>
+                  
+        </section>
+    </section> 
+
+    <div class="objetivoJuego inactive">
+        <h3 class="tituloObjetivo">OBJETIVO DEL JUEGO</h3>
+        <p class="parrafoObjetivo">El objetivo del juego es adivinar el personaje de tu oponente.
+             Esto se consigue haciendo diferentes preguntas, cuya respuesta puede ser afirmativa o negativa.
+               Mientras tanto, se van eliminando candidatos que podrás ver en tu tablero.
+        </p>      
+    </div>
+    
+    <section class="preguntasOverlay">
+        <div class="cajaPreguntas">
+            <div class="seccionPreguntas">
+                <h2 class="elegirSeccion">ELIJA UNA SECCÓN DE PREGUNTAS</h2>
+                <div class="cajaSecciones">
+                    <div class="nombreSeccion seccionVarios">COLOR / GÉNERO / CUERNOS</div>
+                    <div class="nombreSeccion seccionAccesorios">ACCESORIOS</div>
+                    <div class="nombreSeccion seccionFisico">FÍSICO</div>
+                </div>
+                <div class="volverPreguntas">VOLVER ATRÁS</div>
+            </div>
+            
+            <div class="tarjetasPreguntas">
+                    <div class="emojiEnCaja rick rickS"></div>
+                    <div class="emojiEnCaja elias eliasS"></div>
+                    <div class="emojiEnCaja phillip phillipS"></div>
+                    <div class="emojiEnCaja frankie frankieS"></div>
+                    <div class="emojiEnCaja emma emmaS"></div>
+                    <div class="emojiEnCaja roxy roxyS"></div>
+                    <div class="emojiEnCaja mark markS"></div>
+                    <div class="emojiEnCaja stuart stuartS"></div>
+                    <div class="emojiEnCaja nick nickS"></div>
+                    <div class="emojiEnCaja mary maryS"></div>
+                    <div class="emojiEnCaja courtney courtneyS"></div>
+                    <div class="emojiEnCaja mikey mikeyS"></div>
+                    <div class="emojiEnCaja gerard gerardS"></div>
+                    <div class="emojiEnCaja ramona ramonaS"></div>
+                    <div class="emojiEnCaja patrick patrickS"></div>
+                    <div class="emojiEnCaja ruby rubyS"></div>
+                    <div class="emojiEnCaja penny pennyS"></div>
+                    <div class="emojiEnCaja jenny jennyS"></div>
+                    <div class="emojiEnCaja thomas thomasS"></div>
+                    <div class="emojiEnCaja rhonda rhondaS"></div> 
+            </div>
+
+            <img class="crucesita" src="../imagenes/xNegra.png" alt="cerrarCaja">
+
+        </div>
+    </section>
+
+    <section class="ajustes">
+        <ul class="listaAjustes">
+            <li class="listaItem nivel">CAMBIAR DIFICULTAD</li>
+            <li class="listaItem historial">HISTORIAL</li>
+            <li class="listaItem itemReiniciar">REINICIAR PARTIDA</li>
+        </ul>
+        <img class="signatureAjustes" src="../imagenes/t0chW.png" alt="firma">
+    </section>
+
+    <img class="flecha" src="../imagenes/flecha2.png" alt="flecha">
+
+    <section class="popUp active">
+        <div class="elijoEmoji active">
+            <p class="textoElijoEmoji"></p>
+            <div class="botonOk active">ENTENDIDO</div>
+        </div>
+    </section>
+
+    <img class="iconoAjustes" src="../imagenes/ajustes2.png" alt="ajustes">
+    <img class="iconoPregunta" src="../imagenes/objetivo.png" alt="objetivo">
+    
+    <img class="signature" src="../imagenes/t0chW.png" alt="firma">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="../js/scriptJuego.js"></script>
+</body>
+</html>

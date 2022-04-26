@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina Quién || Home</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://kit.fontawesome.com/53ebc3b85f.js" crossorigin="anonymous"></script>
+</head>
+<body>    
+    <section id="paginaInicio">
+        <div class="tituloYSignos">
+            <img class="tituloGrande" src="imagenes/titulo2.png" alt="tituloPrincipal">
+        </div>
+        <img class="play" src="imagenes/play.png" alt="play">
+        
+    </section>
+
+    <section class="popUp">
+        <div class="login">
+            <img class="cerrarPopUp" src="imagenes/xNegra.png" alt="close">
+            <div class="formContainer">
+                <form id="loginForm" action="secciones/juego.html">
+                    <p class="textoLogin">USUARIO</p>
+                    <input class="usuario" type="text"  name="usuario" placeholder="Usuario" maxlength="12" spellcheck="false" required>
+                    <div class="radioBox">
+                        <h2>DIFICULTAD DE JUEGO</h2>
+                        <div class="botonesRadio">
+                            <input type="radio" name="dificultad" id="normal" value="normal" required="required">
+                            <label for="normal">NORMAL</label>
+
+                            <input type="radio" name="dificultad" id="dificil" value="dificil" required="required">
+                            <label for="dificil">DIFÍCIL</label>
+                        </div>
+                    </div>
+                    <button class="botonJugar" type="submit" title="Ingresar" name="Ingresar">JUGAR</button>
+                </form>
+            </div>  
+            <div class="containerDibujo"></div>
+        </div>
+    </section>
+
+    <img class="signature" src="../imagenes/t0chW.png" alt="firma">
+    
+    <script src="js/scriptLogin.js"></script>
+    <script src="js/storage.js"></script>
+</body>
+</html>

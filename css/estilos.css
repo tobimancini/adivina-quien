@@ -1,0 +1,3296 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@300&family=Montserrat:wght@300;400;500;600&family=Righteous&family=Ultra&display=swap');
+/* FONT FAMILIES
+font-family: 'Anton', sans-serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Righteous', cursive;
+font-family: 'Ultra', serif;
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+body{
+    height: 100vh;
+    background-image: linear-gradient(-225deg, #FF057C 0%, #8D0B93 50%, #321575 100%);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+/* PRIMERA PAGINA*/
+
+#paginaInicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tituloGrande{
+    height: 130px;
+}
+
+
+.play{
+    margin-top: 100px;
+    height: 200px;
+    align-self: center;
+    cursor: pointer;
+    transition: all 100ms ease-in-out;
+}
+
+.play:hover{
+    transform: scale(1.03);
+}
+
+.popUp{
+    position: fixed;
+    background-color: rgb(0,0,0,.3);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.popUp.active{
+    visibility: visible;
+}
+
+.login{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 445px;
+    width: 465px;
+    background-color: #fff;
+    border-radius: 3px;
+    border: solid 4px #ff9ae4;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 74px 75px, rgba(0, 0, 0, 0.12) 0px -12px 50px, rgba(0, 0, 0, 0.12) 0px 24px 26px, rgba(0, 0, 0, 0.17) 0px 32px 33px, rgba(0, 0, 0, 0.09) 0px -3px 15px;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+    transform: scale(0.7);
+}
+
+.login.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.login .formContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    height: 100%;
+    width: 650px;
+    background-color: #000;
+    padding: 20px 20px 30px 20px;
+}
+
+.containerDibujo{
+    width: 130px;
+    height: 100%;
+    background-image: url(../imagenes/caritas.png);
+    background-repeat: repeat;
+    background-size: 200px;
+}
+
+
+.cerrarPopUp{
+    position: absolute;
+    height: 35px;
+    right: 90px;
+    top: 6px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    transform: translate(85px);
+}
+
+.textoLogin{
+    font-size: 35px;
+    font-weight: 500;
+    font-family: 'Anton', sans-serif;
+    color: #fff;
+    text-align: start;
+    margin-bottom: 20px;
+    width: 100%;
+    margin-left: 15px;
+}
+
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+.usuario{
+    height: 35px;
+    width: 290px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    margin-left: 25px;
+    align-self: flex-start;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 2px;
+    font-weight: 500;
+    transition: all 200ms ease-in-out;
+}
+
+.usuario:hover{
+    background-color: rgb(255, 228, 248);
+}
+
+.contraseña{
+    height: 35px;
+    width: 290px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    margin-left: 25px;
+    align-self: flex-start;
+    padding: 10px;
+    border-radius: 2px;
+    transition: all 200ms ease-in-out;
+}
+
+.contraseña:hover{
+    background-color: rgb(255, 150, 227);
+    color: #fff;
+    font-weight: 500;
+}
+
+.radioBox{
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.radioBox h2{
+    font-weight: 500;
+    font-size: 35px;
+    color: #fff;
+    margin-bottom: 15px;
+    width: 100%;
+    font-family: 'Anton', sans-serif;
+    margin-left: 15px;
+}
+
+.botonesRadio{
+    margin-left: 25px;  
+    margin-bottom: 40px;  
+}
+
+.botonesRadio label{
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 20px;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; 
+    height: 40px;
+}
+
+.botonesRadio label:hover{
+    background: rgb(255, 150, 227);
+}
+
+.botonesRadio label::before{
+    content: "";
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    left: 15px;
+    border-radius: 50%;
+    background: none;
+    border: 3px solid #fff; 
+}
+
+#loginForm input[type="radio"] {
+    display: none; 
+}
+
+#loginForm input[type="radio"]:checked + label:before {
+    display: none; 
+}
+
+#loginForm input[type="radio"]:checked + label {
+    padding: 5px 15px;
+    background: #ff1dc3da;
+    border-radius: 2px;
+    color: #fff; 
+    font-weight: 500;
+}
+
+
+
+.botonJugar{
+    height: 70px;
+    width: 160px;
+    font-size: 35px;
+    font-weight: 500;
+    background-color: #ff1dc3da;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    align-self: flex-end;
+    transform: translateX(-90px);
+    border: solid 3px rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+   
+}
+
+.botonJugar:hover{
+    background-color: #000;
+}
+
+
+
+/* SEGUNDA PAGINA*/
+
+.juegoTotal{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 100%;
+}
+
+.juegoIzquierda{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 60px;
+    margin-left: 40px;
+}
+
+.tituloIzquierda{
+    width: 100px;
+}
+
+.juegoMedio{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+}
+
+.miTablero{
+    text-align: center;
+    height: 70px;
+}
+
+.tarjetas{
+    height: auto;
+    width: 800px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px;
+    transform: scale(1);
+    visibility: visible;
+    transition: all 300ms ease-in-out;
+}
+
+.emojiJuego{
+    height: 115px;
+    width: 130px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    margin: 5px;
+    transition: all 200ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-color: rgba(255, 255, 255, 0.459);
+    transition: all 300ms ease-in-out;
+}
+
+.emojiJuego p{
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Kanit', sans-serif;
+    font-weight: 900;
+    transition: all 200ms ease-in-out;
+    opacity: 0;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.emojiJuego:hover{
+    cursor: pointer;
+    box-shadow: rgba(240, 46, 170, 0.4) 2px 2px, rgba(240, 46, 170, 0.3) 4px 4px, rgba(240, 46, 170, 0.2) 7px 7px, rgba(240, 46, 170, 0.1) 11px 11px, rgba(240, 46, 170, 0.05) 16px 16px;
+    transform: scale(1.02);
+}
+
+.emojiJuego:hover p{
+    opacity: 1;
+    transform: translateY(-95px);
+}
+
+.emojiJuego.descartado{
+    background-image: url(../imagenes/cruzRosa.png);
+    background-size: contain;
+    background-color: #000;
+    border: solid 2px #fff;
+    box-shadow: none;
+}
+
+.emojiJuego.descartado:hover{
+    background-image:url(../imagenes/cruzRosa.png);
+    cursor: default;
+    box-shadow: none;
+    border: solid 2px #fff;
+    transform: scale(1);
+}
+
+.rick{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/diabloRojoChiva.png);
+    transition: all 200ms ease-in-out;
+}
+.rick:hover {
+    background-image: url(../imagenes/emojis/diabloRojoChiva.png);
+}
+
+.elias{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/elias.png);
+    transition: all 200ms ease-in-out;
+}
+.elias:hover {
+    background-image: url(../imagenes/emojis/elias.png);
+}
+
+.phillip {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/diabloVioletaRiendo.png);
+    transition: all 200ms ease-in-out;
+}
+.phillip:hover {
+    background-image: url(../imagenes/emojis/diabloVioletaRiendo.png);
+}
+
+.frankie{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/frankie.png);
+    transition: all 200ms ease-in-out;
+}
+.frankie:hover {
+    background-image: url(../imagenes/emojis/frankie.png);
+}
+
+.emma {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/rojoEmoGirl.png);
+    transition: all 200ms ease-in-out;
+}
+.emma:hover {
+    background-image:url(../imagenes/emojis/rojoEmoGirl.png);
+}
+
+.roxy {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/roxy.png);
+    transition: all 200ms ease-in-out;
+}
+.roxy:hover {
+    background-image: url(../imagenes/emojis/roxy.png);
+}
+
+.mark{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/mark.png);
+    transition: all 200ms ease-in-out;
+}
+.mark:hover {
+    background-image: url(../imagenes/emojis/mark.png);
+}
+
+.stuart {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/rojoGriton.png);
+    transition: all 200ms ease-in-out;
+}
+.stuart:hover {
+    background-image: url(../imagenes/emojis/rojoGriton.png);
+}
+
+.nick {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/violetaFumon.png);
+    transition: all 200ms ease-in-out;
+}
+.nick:hover {
+    background-image: url(../imagenes/emojis/violetaFumon.png);
+}
+
+.mary{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/mary.png);
+    transition: all 200ms ease-in-out;
+}
+.mary:hover {
+    background-image: url(../imagenes/emojis/mary.png);
+}
+
+.courtney{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/courtney.png);
+    transition: all 200ms ease-in-out;
+}
+.courtney:hover {
+    background-image: url(../imagenes/emojis/courtney.png);
+}
+
+.mikey{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/mikey.png);
+    transition: all 200ms ease-in-out;
+}
+.mikey:hover {
+    background-image: url(../imagenes/emojis/mikey.png);
+}
+
+.gerard{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/gerard.png);
+    transition: all 200ms ease-in-out;
+}
+.gerard:hover {
+    background-image: url(../imagenes/emojis/gerard.png);
+}
+
+.ramona{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/ramona.png);
+    transition: all 200ms ease-in-out;
+}
+.ramona:hover {
+    background-image: url(../imagenes/emojis/ramona.png);
+}
+
+.patrick{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/patrick.png);
+    transition: all 200ms ease-in-out;
+}
+.patrick:hover {
+    background-image: url(../imagenes/emojis/patrick.png);
+}
+
+.ruby{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/ruby.png);
+    transition: all 200ms ease-in-out;
+}
+.ruby:hover {
+    background-image: url(../imagenes/emojis/ruby.png);
+}
+
+.penny{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/penny.png);
+    transition: all 200ms ease-in-out;
+}
+.penny:hover {
+    background-image: url(../imagenes/emojis/penny.png);
+}
+
+.jenny{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/jenny.png);
+    transition: all 200ms ease-in-out;
+}
+.jenny:hover {
+    background-image: url(../imagenes/emojis/jenny.png);
+}
+
+.thomas{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/Thomas.png);
+    transition: all 200ms ease-in-out;
+}
+.thomas:hover {
+    background-image: url(../imagenes/emojis/Thomas.png);
+}
+
+.rhonda{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), transparent), url(../imagenes/emojis/rhonda.png);
+    transition: all 200ms ease-in-out;
+}
+.rhonda:hover {
+    background-image: url(../imagenes/emojis/rhonda.png);
+}
+
+
+.selectPregunta{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 680px;
+    height: 100px;
+    background-color: #000 ;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: all 200ms ease-in-out;
+    cursor: pointer;
+    margin-top: 20px;
+    border: solid 2px #aaa;
+}
+
+.selectPregunta p{
+    font-size: 45px;
+    font-family: 'Anton', sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+.selectPregunta:hover{
+    box-shadow: rgba(240, 46, 170, 0.4) 2px 2px, rgba(240, 46, 170, 0.3) 4px 4px, rgba(240, 46, 170, 0.2) 7px 7px, rgba(240, 46, 170, 0.1) 11px 11px, rgba(240, 46, 170, 0.05) 16px 16px;
+    border: solid 2px #fff;
+}
+
+
+.juegoDerecha{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.juegoCPU{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.juegoDerecha h3{
+    color: #fff;
+    margin-bottom: 5px;
+    text-align: center;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: white; text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.juegoDerecha img{
+    height: 40px;
+}
+
+.elegidoCPU{
+    height: 140px;
+    width: 160px;
+    margin-bottom: 20px;
+    background-image: url(../imagenes/signoEmoji.png);
+    overflow: hidden;
+    background-size: 120px;
+    background-position: center;
+    background-color: #000;
+    background-repeat: no-repeat;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: all 200ms ease-in-out;
+    border: solid 2px #aaa;
+}
+
+.elegidoCPU:hover{
+    box-shadow: rgba(240, 46, 170, 0.4) 2px 2px, rgba(240, 46, 170, 0.3) 4px 4px, rgba(240, 46, 170, 0.2) 7px 7px, rgba(240, 46, 170, 0.1) 11px 11px, rgba(240, 46, 170, 0.05) 16px 16px;
+    border: solid 2px #fff;
+}
+
+.tableroCPU{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 3px;
+    height: 135px;
+    width: 160px;
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: all 200ms ease-in-out;
+    border: solid 4px #000;
+}
+
+.tableroCPU:hover{
+    box-shadow: rgba(162, 107, 142, 0.4) 2px 2px, rgba(240, 46, 170, 0.3) 4px 4px, rgba(240, 46, 170, 0.2) 7px 7px, rgba(240, 46, 170, 0.1) 11px 11px, rgba(240, 46, 170, 0.05) 16px 16px;
+}
+
+.tableroYTituloCPU{
+    transition:all 300ms ease-in-out;
+    width: auto;
+    padding: 10px;
+}
+
+.tableroYTituloCPU.active{
+    transform: scale(1.4) translateY(30px);
+    transition: all 300ms ease-in-out;
+    background-color: #f763cf;
+    border-radius: 2px;
+    animation: bordesAnimados;
+    animation-duration: 400ms;
+    animation-iteration-count: infinite; 
+}
+
+.emojiCPU{
+    height: 25px;
+    width: 25px;
+    background-color: #000;
+    border-radius: 3px;
+    margin: 2px;
+    background-image: url(../imagenes/signoEmojiBorde.png);
+    overflow: hidden;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: solid 1px #f763cf;
+    transform: scale(1);
+    transition: all 600ms ease-in-out;
+}
+
+.emojiCPU.descartado{
+    background-image: none;
+    background-color: #ff1dc300;
+    border: none;
+    transform: scale(0);
+}
+
+.miElegido{
+    height: 145px;
+    width: 160px;
+    background-color: #000;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: all 200ms ease-in-out;
+    border: solid 2px #aaa;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.miElegido:hover{
+    box-shadow: rgba(240, 46, 170, 0.4) 2px 2px, rgba(240, 46, 170, 0.3) 4px 4px, rgba(240, 46, 170, 0.2) 7px 7px, rgba(240, 46, 170, 0.1) 11px 11px, rgba(240, 46, 170, 0.05) 16px 16px;
+    border: solid 2px #fff;
+}
+
+
+.preguntasOverlay{
+    position: fixed;
+    background-color: rgb(0,0,0,.3);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.preguntasOverlay.active{
+    visibility: visible;
+}
+
+.overlay{
+    animation-name: overlay;
+    animation-duration: 600ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.cajaPreguntas{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    bottom: 4%;
+    height: 700px;
+    width: 1000px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: solid 4px #eee;
+    border-radius: 3px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 74px 75px, rgba(0, 0, 0, 0.12) 0px -12px 50px, rgba(0, 0, 0, 0.12) 0px 24px 26px, rgba(0, 0, 0, 0.17) 0px 32px 33px, rgba(0, 0, 0, 0.09) 0px -3px 15px;
+    transition: all 200ms ease-in-out;
+    opacity: 0;
+}
+
+.cajaPreguntas.active{
+    opacity: 1;
+}
+
+
+
+.seccionPreguntas{
+    height: 650px;
+    width: 65%;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.elegirSeccion{
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 60px;
+    color: rgb(203, 29, 157);
+    font-family: 'Anton', sans-serif;
+}
+
+.cajaSecciones{
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nombreSeccion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 300px;
+    margin-top: 15px;
+    background-color: #ddd;
+    border-top: solid 3px #ddd;
+    border-bottom: solid 3px #ddd;
+    border-radius: 3px;
+    font-size: 40px;
+    font-family: 'Anton', sans-serif;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.nombreSeccion:hover{
+    background-color: rgb(203, 29, 157);
+    color: #fff;
+}
+
+.seccionVarios{
+    width: 623px;
+}
+
+.volverPreguntas{
+    height: 70px;
+    width: 200px;
+    background-color: rgb(203, 29, 157);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 900;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    border: solid 3px #fff;
+    opacity: 0;
+}
+
+.volverPreguntas.active{
+    opacity: 1;
+}
+
+.volverPreguntas.active:hover{
+    background-color: #000;
+    border: solid 3px rgb(203, 29, 157);
+}
+
+.tarjetasPreguntas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 232px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255);
+    border-left: solid 4px rgb(203, 29, 157);
+    border-right: 4px solid rgb(203, 29, 157);
+}
+
+.emojiEnCaja{
+    height: 65px;
+    width: 112px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border-radius: 3px;
+}
+
+.emojiEnCaja.cancelado{
+    background-image: url(../imagenes/cruzRosa.png);
+    background-size: 70px;
+    background-repeat: no-repeat;
+}
+
+.crucesita{
+    position: absolute;
+    height: 35px;
+    cursor: pointer;
+    top: 5px;
+    right: 5px;
+}
+
+.crucesita:hover{
+    transform: rotate(90deg);
+}
+
+.pregunta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 86px;
+    border-radius: 3px;
+    color: #000;
+    background-color: #ddd;
+    border-top: solid 3px #ddd;
+    border-bottom: solid 3px #ddd;
+    font-family: 'Anton', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.pregunta:hover{
+    background-color: yellowgreen;
+    color: #fff;
+}
+
+.elijoEmoji{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    width: 360px;
+    padding: 15px;
+    margin-bottom: 50px;
+    background-color:#fff;
+    border-radius: 3px;
+    border: solid 6px #f763cf;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 74px 75px, rgba(0, 0, 0, 0.12) 0px -12px 50px, rgba(0, 0, 0, 0.12) 0px 24px 26px, rgba(0, 0, 0, 0.17) 0px 32px 33px, rgba(0, 0, 0, 0.09) 0px -3px 15px;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+    transform: scale(0.7);
+    text-align: center;
+}
+
+.elijoEmoji.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.elijoEmoji.active img{
+    height: 30px;
+    border-radius: 3px;
+}
+
+.textoElijoEmoji{
+    color: #000;
+    font-size: 35px;
+    font-family: 'Anton', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 10px;
+    transition: all 300ms ease-in-out;
+}
+
+.botonOk{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: none;
+    background-color: none;
+    width: none;
+    background-color: none;
+    color: none;
+    padding: 0px;
+    cursor: default;
+}
+
+.botonOk.active{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(203, 29, 157);
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 3px;
+    width: 180px;
+    cursor: pointer;
+    border: solid 3px rgb(203, 29, 157);
+    font-family: 'Righteous', cursive;
+    text-align: center;
+    font-size: 25px;
+    padding: 5px;
+    transition: all 200ms ease-in-out;
+}
+
+.botonOk.active:hover{
+    background-color: #000;
+}
+
+
+.dark{
+    visibility: hidden;
+}
+
+.tarjetas.light{
+    transform: scale(1.3);
+    animation-name: elegirEmoji;
+    animation-duration: 600ms;
+}
+
+.tarjetas.light .emojiJuego{
+    background-color: rgba(255, 255, 255, 0.459);
+}
+
+.tarjetas.light .emojiJuego p{
+    color: #fff;
+}
+
+.tarjetas.light .emojiJuego:hover p{
+    transform: translateY(-95px);
+}
+
+.reiniciar{
+    height: 70px;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(203, 29, 157);
+    border-radius: 3px;
+    border: solid 3px  rgb(203, 29, 157);;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 900;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+}
+
+.reiniciar:hover{
+    color: #fff;
+    background-color: #000
+}
+
+
+.toast{
+    background: yellowgreen;
+    min-height: 50px;
+    width: auto;
+    font-family:'Zen Kaku Gothic Antique', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    border-top: solid 3px #fff;
+    border-bottom: solid 3px #fff;
+}
+
+.ajustes{
+    position: fixed;
+    visibility:hidden ;
+    background-color: #000;
+    left: 0px;
+    height: 100vh;
+    width: 0px;
+    border-right: solid 3px yellowgreen;
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+}
+
+.ajustes.active{
+    opacity: 1;
+    visibility: visible;
+    height: 100vh;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    transition: all 400ms ease-in-out;
+    animation: ajustesContainer;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 74px 75px, rgba(0, 0, 0, 0.12) 0px -12px 50px, rgba(0, 0, 0, 0.12) 0px 24px 26px, rgba(0, 0, 0, 0.17) 0px 32px 33px, rgba(0, 0, 0, 0.09) 0px -3px 15px;
+}
+
+.ajustes.inactive{
+    transition: all 400ms ease-in-out;
+    visibility: hidden;
+    animation: ajustesContainerOff;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.iconoAjustes{
+    position: fixed;
+    top: 15px;
+    left: 30px;
+    height: 90px;
+    cursor: pointer;
+    height: 55px;
+    transition: all 100ms ease-in-out;
+}
+
+.iconoAjustes.active{
+    animation-name: iconoAjustes;
+    animation-duration: 800ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition: all 100ms ease-in-out;
+}
+
+.iconoAjustes.inactive{
+    animation-name: iconoAjustesOff;
+    animation-duration: 800ms;
+    animation-iteration-count: 1;
+    transition: all 100ms ease-in-out;
+}
+
+.iconoAjustes:hover, .iconoAjustes.inactive:hover{
+    transform: scale(1.05) rotate(45deg);
+}
+
+.iconoPregunta{
+    position: fixed;
+    top: 90px;
+    left: 37px;
+    cursor: pointer;
+    height: 55px;
+    width: 43px;
+    transition: all 100ms ease-in-out;
+    z-index: 1;
+}
+
+.escondido{
+    animation-name: escondido;
+    animation-duration: 100ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.aparecido{
+    animation-name: aparecido;
+    animation-duration: 700ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+
+.iconoPregunta:hover{
+    transform: scale(1.05);
+}
+
+.objetivoJuego{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 0px 15px 100px;
+    opacity: 0;
+}
+
+.objetivoJuego.inactive{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 580px;
+    height: 380px;
+    background-color: #000;
+    border-right: solid 3px yellowgreen;
+    border-bottom: solid 3px yellowgreen;
+    border-bottom-right-radius: 3px;
+    animation-name: iconoOff;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.objetivoJuego.active{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 580px;
+    height: 380px;
+    background-color: #000;
+    border-right: solid 3px yellowgreen;
+    border-bottom: solid 3px yellowgreen;
+    border-bottom-right-radius: 3px;
+    animation-name: iconoOn;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.listaAjustes{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 100%;
+    margin-top: 90px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.listaItem{
+    font-family: 'Anton', sans-serif;
+    color: #fff;
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(203 29 157);
+    border-top: solid 3px rgb(203 29 157);
+    border-bottom: solid 3px rgb(203 29 157);
+    cursor: pointer;
+    padding: 15px;
+    opacity: 0;
+}
+
+.listaItem.active{
+    animation-name: listaOn;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition: all 200ms ease-in-out;
+}
+
+.listaItem.inactive{
+    animation-name: listaOff;
+    animation-duration: 400ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition: all 200ms ease-in-out;
+}
+
+.listaItem.active:hover{
+    border-top:solid 3px #fff;
+    border-bottom: solid 3px #fff;
+}
+
+.listaAjustes.active{
+    animation-name: opacityOn;
+    animation-duration: 700ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    visibility: visible;
+}
+
+.listaAjustes.inactive{
+    animation-name: opacityOff;
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+.subItem{
+    font-family: 'Anton', sans-serif;
+    color: rgb(203 29 157);
+    border-top: solid 3px rgb(203 29 157);
+    border-bottom: solid 3px rgb(203 29 157);
+    height: auto;
+    font-size: 25px;
+    margin-bottom: 10px;
+    background-color: #000;
+    padding: 15px;
+    text-align: center;
+    animation-name: subItemOff;
+    animation-duration: 100ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition: all 100ms ease-in-out;
+}
+
+.nivelDiferente{
+    font-family: 'Anton', sans-serif;
+    color: rgb(203 29 157);
+    border-top: solid 3px rgb(203 29 157);
+    border-bottom: solid 3px rgb(203 29 157);
+    height: auto;
+    font-size: 25px;
+    margin-bottom: 10px;
+    background-color: #000;
+    cursor: pointer;
+    padding: 15px;
+    text-align: center;
+    animation-name: subItem;
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition: all 300ms ease-in-out;
+}
+
+.nivelDiferente:hover{
+    background-color: #fff;
+}
+
+.resultadoHistorial{
+    font-family: 'Anton', sans-serif;
+    color: rgb(203 29 157);
+    border-top: solid 3px rgb(203 29 157);
+    border-bottom: solid 3px rgb(203 29 157);
+    height: auto;
+    font-size: 25px;
+    margin-bottom: 10px;
+    background-color: #000;
+    padding: 15px;
+    text-align: center;
+    animation-name: subItem;
+    animation-duration: 300ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    transition: all 300ms ease-in-out;
+}
+
+.resultadoHistorial:hover{
+    background-color: #fff;
+}
+
+.tituloObjetivo{
+    width: 100%;
+    font-family: 'Anton', sans-serif;
+    color: #fff;
+    background-color: rgb(203, 29, 157);
+    font-size: 40px;
+    text-align: end;
+    padding-right: 20px;
+}
+
+.parrafoObjetivo{
+    width: 350px;
+    align-self: flex-start;
+    margin-top: 15px;
+    font-family: 'Anton', sans-serif;
+    font-weight: 500;
+    color: #ff7ddc;
+    font-size: 23px;
+    border-left: solid 1px #ff7ddc;
+    padding-left: 20px;
+    text-align: justify;
+}
+
+.elegirPregunta{
+    animation: bordesAnimados;
+    animation-duration: 400ms;
+    animation-iteration-count: infinite;
+}
+
+.flecha{
+    position: fixed;
+    top: 50%;
+    right: 46.7%;
+    height: 100px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+    transform: scale(0.5);
+}
+
+.flecha.active{
+    animation-name: flecha;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    visibility: visible;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+    transform: scale(1);
+}
+
+
+
+.ganadorFondo{
+    animation-name: ganadorFondo;
+    animation-duration: 1200ms;
+    animation-iteration-count: infinite;
+}
+
+
+.perdedorFondo{
+    animation-name: perdedorFondo;
+    animation-duration: 4000ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;    
+}
+
+.veredicto{
+    animation-name: veredicto;
+    animation-duration: 1500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.signature{
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    height: 30px;
+    visibility: visible;
+}
+
+.signatureAjustes{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    height: 35px;
+    transition: all 200ms ease-in-out;
+}
+
+.ultimoEmoji{
+    animation-name: ultimoEmoji;
+    animation-duration: 600ms;
+    animation-iteration-count: infinite;
+    animation-delay: 300ms;
+}
+
+.ultimoEmoji:hover p{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/***********************************************/
+/***************MEDIA QUERYS********************/
+/***********************************************/
+
+@media all and (max-width: 1024px){
+    
+    /* PRIMERA PAGINA*/
+    
+    .tituloGrande{
+        height: 100px;
+    }
+    
+    
+    .play{
+        height: 150px;
+    }
+
+    /* SEGUNDA PAGINA*/
+
+    .juegoTotal{
+        width: 100%;
+        height: 100vh;
+    }
+    
+    .juegoIzquierda{
+       opacity: 0;
+       visibility: hidden;
+       position: absolute;
+    }
+    
+    .juegoMedio{
+        height: 100%;
+        width: 70%;
+    }
+    
+    .miTablero{
+        height: 60px;
+    }
+    
+    .tarjetas{
+        width: 450px;
+        margin: 15px;
+    }
+    
+    .emojiJuego{
+        height: 115px;
+        width: 100px;
+    }
+    
+    .emojiJuego.descartado{
+        background-repeat: no-repeat;
+    }
+    
+    
+.selectPregunta{
+    width: 450px;
+    height: 85px;
+}
+
+.selectPregunta p{
+    font-size: 40px;
+}
+
+.juegoDerecha{
+    height: 850px;
+    margin-left: 25px;
+}
+
+.juegoDerecha h3{
+    font-size: 10px;
+}
+
+.juegoDerecha img{
+    height: 50px;
+}
+
+.elegidoCPU{
+    height: 120px;
+    width: 130px;
+    background-size: 95px;
+}
+
+.tableroCPU{
+    height: 145px;
+    width: 130px;
+}
+
+.emojiCPU{
+    height: 22px;
+    width: 20px;
+}
+
+.miElegido{
+    height: 125px;
+    width: 130px;
+}
+
+.cajaPreguntas{
+    top: 200px;
+    height: 650px;
+    width: 700px;
+}
+
+.seccionPreguntas{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.elegirSeccion{
+    width: 100%;
+    height: 55px;
+    font-size: 40px;
+    margin-bottom: 0px;
+}
+
+.cajaSecciones{
+    height: 300px;
+    width: 100%;
+}
+
+.nombreSeccion{
+    height: 140px;
+    width: 300px;
+    font-size: 35px;
+}
+
+.seccionVarios{
+    width: 615px;
+}
+
+.volverPreguntas{
+    height: 60px;
+    width: 180px;
+}
+
+.volverPreguntas.active{
+    opacity: 1;
+}
+
+.tarjetasPreguntas{
+    width: 90%;
+    margin-bottom: 30px;
+    height: 150px;
+}
+
+.emojiEnCaja{
+    height: 75px;
+    width: 61.3px;
+}
+
+.pregunta{
+    width: 300px;
+    height: 65px;
+    font-size: 23px;
+}
+
+.tarjetas.light{
+    transform: scale(1.3) translateX(65px);
+}
+
+.elijoEmoji{
+    min-height: 170px;
+    width: 250px;
+}
+
+.elijoEmoji.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.textoElijoEmoji{
+    font-size: 28px;
+}
+
+
+.toast{
+    min-height: 35px;
+    font-size: 18px;
+}
+
+.ajustes{
+    width: 225px;
+}
+
+.ajustes.active{
+    width: 225px;
+    animation: ajustesContainer768;
+}
+
+.ajustes.inactive{
+    animation: ajustesContainerOff768;
+}
+
+.iconoAjustes{
+    top: 10px;
+    left: 10px;
+    height: 45px;
+}
+
+.iconoAjustes.active{
+    animation-name: iconoAjustes768;
+}
+
+.iconoAjustes.inactive{
+    animation-name: iconoAjustesOff768;
+}
+
+.iconoPregunta{
+    top: 70px;
+    left: 16px;
+    height: 45px;
+    width: 35px;
+}
+
+.iconoPregunta:hover{
+    transform: scale(1.05);
+}
+
+.objetivoJuego{
+    padding: 10px 0px 10px 62px;
+}
+
+.objetivoJuego.inactive{
+    width: 520px;
+    height: 290px;
+}
+.objetivoJuego.active{
+    width: 520px;
+    height: 290px;
+}
+
+.listaItem{
+    font-size: 25px;
+    padding: 5px;
+}
+
+.listaItem.active{
+    animation-name: listaOn768;
+}
+
+.listaItem.inactive{
+    animation-name: listaOff768;
+}
+
+.subItem{
+    font-size: 20px;
+    padding: 5px;
+    animation-name: subItemOff;
+}
+
+.nivelDiferente{
+    font-size: 20px;
+    padding: 5px;
+    animation-name: subItem;
+
+}
+
+.resultadoHistorial{
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+    animation-name: subItem;
+}
+
+.tituloObjetivo{
+    font-size: 30px;
+    text-align: end;
+}
+
+.parrafoObjetivo{
+    width: 300px;
+    font-size: 19px;
+}
+
+.flecha{
+    right: 55.4%;
+}
+
+}
+
+
+/*******MEDIA QUERY*******/
+
+
+@media all and (max-width: 600px){
+    
+    /* PRIMERA PAGINA*/
+    
+    .tituloGrande{
+        height: 70px;
+    }
+    
+    
+    .play{
+        height: 120px;
+    }
+
+    /* SEGUNDA PAGINA*/
+
+    .juegoTotal{
+        width: 100%;
+        height: 100vh;
+    }
+    
+    .juegoIzquierda{
+       opacity: 0;
+       visibility: hidden;
+       position: absolute;
+    }
+    
+    .juegoMedio{
+        height: 100%;
+        width: 70%;
+    }
+    
+    .miTablero{
+        height: 45px;
+    }
+    
+    .tarjetas{
+        width: 350px;
+        margin: 15px;
+    }
+    
+    .emojiJuego{
+        height: 90px;
+        width: 70px;
+    }
+    
+    .emojiJuego.descartado{
+        background-repeat: no-repeat;
+    }
+    
+    
+.selectPregunta{
+    width: 350px;
+    height: 85px;
+}
+
+.selectPregunta p{
+    font-size: 30px;
+}
+
+.juegoDerecha{
+    height: 750px;
+    margin-left: 25px;
+}
+
+.juegoDerecha h3{
+    font-size: 10px;
+}
+
+.juegoDerecha img{
+    height: 40px;
+}
+
+.elegidoCPU{
+    height: 100px;
+    width: 110px;
+    background-size: 85px;
+}
+
+.tableroCPU{
+    height: 120px;
+    width: 110px;
+}
+
+.emojiCPU{
+    height: 17px;
+    width: 18px;
+}
+
+.miElegido{
+    height: 120px;
+    width: 110px;
+}
+
+.cajaPreguntas{
+    top: 140px;
+    height: 500px;
+    width: 500px;
+}
+
+.seccionPreguntas{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.elegirSeccion{
+    width: 100%;
+    height: 80px;
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+.cajaSecciones{
+    height: 190px;
+    width: 100%;
+}
+
+.nombreSeccion{
+    height: 80px;
+    width: 220px;
+    font-size: 25px;
+}
+
+.seccionVarios{
+    width: 455px;
+}
+
+.volverPreguntas{
+    height: 50px;
+    width: 150px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.volverPreguntas.active{
+    opacity: 1;
+}
+
+.tarjetasPreguntas{
+    width: 90%;
+    margin-bottom: 30px;
+    height: 90px;
+}
+
+.emojiEnCaja{
+    height: 45px;
+    width: 43.4px;
+}
+
+.pregunta{
+    width: 220px;
+    height: 40px;
+    font-size: 15px;
+}
+
+.tarjetas.light{
+    transform: scale(1.3) translateX(65px);
+}
+
+.elijoEmoji{
+    min-height: 170px;
+    width: 250px;
+}
+
+.elijoEmoji.active{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.textoElijoEmoji{
+    font-size: 28px;
+}
+
+
+.toast{
+    min-height: 20px;
+    font-size: 15px;
+}
+
+.ajustes{
+    width: 225px;
+}
+
+.ajustes.active{
+    width: 225px;
+    animation: ajustesContainer768;
+}
+
+.ajustes.inactive{
+    animation: ajustesContainerOff768;
+}
+
+.iconoAjustes{
+    top: 5px;
+    left: 5px;
+    height: 35px;
+}
+
+.iconoAjustes.active{
+    animation-name: iconoAjustes600;
+}
+
+.iconoAjustes.inactive{
+    animation-name: iconoAjustesOff600;
+}
+
+.iconoPregunta{
+    top: 50px;
+    left: 7px;
+    height: 35px;
+    width: 30px;
+}
+
+.iconoPregunta:hover{
+    transform: scale(1.05);
+}
+
+.objetivoJuego{
+    padding: 10px 0px 10px 62px;
+}
+
+.objetivoJuego.inactive{
+    width: 400px;
+    height: 235px;
+}
+.objetivoJuego.active{
+    width: 400px;
+    height: 235px;
+}
+
+.listaItem{
+    font-size: 20px;
+    padding: 5px;
+}
+
+.listaItem.active{
+    animation-name: listaOn600;
+}
+
+.listaItem.inactive{
+    animation-name: listaOff600;
+}
+
+.subItem{
+    font-size: 20px;
+    padding: 5px;
+    animation-name: subItemOff;
+}
+
+.nivelDiferente{
+    font-size: 18px;
+    padding: 5px;
+    animation-name: subItem;
+}
+
+.resultadoHistorial{
+    font-size: 18px;
+    margin-bottom: 10px;
+    padding: 5px;
+    animation-name: subItem;
+}
+
+.tituloObjetivo{
+    font-size: 25px;
+    text-align: end;
+}
+
+.parrafoObjetivo{
+    width: 250px;
+    font-size: 15px;
+}
+
+.flecha{
+    right: 55.4%;
+}
+
+.signature{
+    bottom: 5px;
+    right: 10px;
+    height: 25px;
+}
+
+.signatureAjustes{
+    position: absolute;
+    bottom: 10px;
+    right: 15px;
+    height: 35px;
+    transition: all 200ms ease-in-out;
+}
+
+}
+
+
+/*******MEDIA QUERY*******/
+
+@media all and (max-width: 420px){
+
+/* PRIMERA PAGINA*/
+    
+.tituloGrande{
+    height: 50px;
+}
+
+
+.play{
+    height: 100px;
+}
+
+.login{
+    height: 300px;
+    width: 350px;
+}
+
+.login .formContainer{
+    height: 100%;
+    width: 290px;
+    padding: 10px 10px 15px 10px;
+}
+
+.containerDibujo{
+    width: 50px;
+    height: 100%;
+}
+
+
+.cerrarPopUp{
+    height: 30px;
+}
+
+.textoLogin{
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+#loginForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+    width: 100%;
+}
+
+.usuario{
+    height: 25px;
+    width: 220px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 13px;
+    padding: 5px;
+}
+
+.contraseña{
+    height: 25px;
+    width: 220px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 13px;
+    padding: 50px;
+}
+
+.radioBox{
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.radioBox h2{
+    font-weight: 500;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 8px;
+    width: 100%;
+    font-family: 'Anton', sans-serif;
+    margin-left: 8px;
+}
+
+.botonesRadio{
+    width: 100%;
+    margin-left: 13px;  
+    margin-bottom: 25px;  
+}
+
+.botonesRadio label{
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+    padding: 5px 15px 5px 51px;
+    font-size: 15px;
+    border-radius: 5px;
+    height: 30px;
+}
+
+
+.botonJugar{
+    height: 40px;
+    width: 130px;
+    font-size: 25px;
+    font-weight: 900;
+    background-color: #ff1dc3da;
+    transform: translateX(-65px);
+}
+
+.botonJugar:hover{
+    background-color: #000;
+}
+
+/* SEGUNDA PAGINA*/
+
+.juegoTotal{
+    width: 100%;
+    height: 100vh;
+}
+
+.juegoIzquierda{
+   opacity: 0;
+   visibility: hidden;
+   position: absolute;
+}
+
+.juegoMedio{
+    height: 100%;
+    width: 80%;
+}
+
+.miTablero{
+    height: 40px;
+    margin-left: 25px;
+}
+
+.tarjetas{
+    width: 280px;
+    margin: 20px 0px 20px 25px;
+}
+
+.emojiJuego{
+    height: 90px;
+    width: 65px;
+    margin: 2px;
+}
+
+.emojiJuego.descartado{
+    background-repeat: no-repeat;
+}
+
+
+.selectPregunta{
+    width: 230px;
+    height: 50px;
+    margin-left: 25px;
+}
+
+.selectPregunta p{
+font-size: 20px;
+}
+
+.juegoDerecha{
+height: 670px;
+margin-left: 25px;
+}
+
+.juegoDerecha h3{
+font-size: 8px;
+}
+
+.juegoDerecha img{
+height: 40px;
+}
+
+.elegidoCPU{
+height: 70px;
+width: 70px;
+background-size: 50px;
+}
+
+.tableroCPU{
+height: 90px;
+width: 70px;
+border: solid 3px #000;
+}
+
+.emojiCPU{
+height: 10px;
+width: 10px;
+}
+
+.miElegido{
+height: 80px;
+width: 70px;
+}
+
+.cajaPreguntas{
+top: 150px;
+height: 650px;
+width: 400px;
+padding-bottom: 20px;
+}
+
+.seccionPreguntas{
+height: 70%;
+width: 100%;
+display: flex;
+flex-direction: column;
+}
+
+.elegirSeccion{
+width: 100%;
+height: 50px;
+font-size: 30px;
+margin-bottom: 0px;
+}
+
+.cajaSecciones{
+height: 280px;
+width: 100%;
+padding: 15px;
+}
+
+.nombreSeccion{
+height: 90px;
+width: 165px;
+font-size: 25px;
+}
+
+.seccionVarios{
+width: 330px;
+}
+
+.volverPreguntas{
+height: 50px;
+width: 150px;
+}
+
+.volverPreguntas.active{
+opacity: 1;
+}
+
+.tarjetasPreguntas{
+width: 90%;
+margin-bottom: 30px;
+height: 90px;
+}
+
+.emojiEnCaja{
+height: 45px;
+width: 34.4px;
+}
+
+.pregunta{
+width: 165px;
+height: 45px;
+font-size: 14px;
+}
+
+.tarjetas.light{
+transform: scale(1.3) translateX(35px);
+}
+
+.elijoEmoji{
+min-height: 170px;
+width: 250px;
+}
+
+.elijoEmoji.active{
+opacity: 1;
+transform: scale(1);
+}
+
+.textoElijoEmoji{
+font-size: 28px;
+}
+
+
+.toast{
+min-height: 18px;
+font-size: 13px;
+}
+
+.ajustes{
+width: 185px;
+}
+
+.ajustes.active{
+width: 185px;
+animation: ajustesContainer410;
+}
+
+.ajustes.inactive{
+animation: ajustesContainerOff410;
+}
+
+.iconoAjustes{
+top: 10px;
+left: 10px;
+height: 35px;
+}
+
+.iconoAjustes.active{
+animation-name: iconoAjustes410;
+}
+
+.iconoAjustes.inactive{
+animation-name: iconoAjustesOff410;
+}
+
+.iconoPregunta{
+top: 60px;
+left: 16px;
+height: 35px;
+width: 30px;
+}
+
+.iconoPregunta.w410{
+    left: auto;
+    right: 16px;
+    top: 10px;
+}
+
+.iconoPregunta:hover{
+transform: scale(1.05);
+}
+
+.objetivoJuego{
+padding: 10px 0px 10px 62px;
+}
+
+.objetivoJuego.inactive{
+width: 350px;
+height: 250px;
+animation-name: iconoOff420;
+}
+.objetivoJuego.active{
+width: 350px;
+height: 250px;
+animation-name: iconoOn420;
+}
+
+.listaItem{
+font-size: 25px;
+padding: 5px;
+}
+
+.listaItem.active{
+animation-name: listaOn768;
+}
+
+.listaItem.inactive{
+animation-name: listaOff768;
+}
+
+.subItem{
+font-size: 20px;
+padding: 5px;
+animation-name: subItemOff;
+}
+
+.nivelDiferente{
+font-size: 20px;
+padding: 5px;
+animation-name: subItem;
+
+}
+
+.resultadoHistorial{
+font-size: 20px;
+margin-bottom: 10px;
+padding: 5px;
+animation-name: subItem;
+}
+
+.tituloObjetivo{
+font-size: 25px;
+text-align: start;
+padding-left:15px;
+}
+
+.parrafoObjetivo{
+width: 230px;
+font-size: 15px;
+}
+
+.flecha{
+    right: 54%;
+    height: 60px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+    transform: scale(0.5);
+}
+
+}
+
+
+/*******MEDIA QUERY*******/
+
+@media all and (max-width: 375px){
+
+    /* PRIMERA PAGINA*/
+        
+    .tituloGrande{
+        height: 50px;
+    }
+    
+    
+    .play{
+        height: 100px;
+    }
+    
+    .login{
+        height: 300px;
+        width: 350px;
+    }
+    
+    .login .formContainer{
+        height: 100%;
+        width: 290px;
+        padding: 10px 10px 15px 10px;
+    }
+    
+    .containerDibujo{
+        width: 50px;
+        height: 100%;
+    }
+    
+    
+    .cerrarPopUp{
+        height: 30px;
+    }
+    
+    .textoLogin{
+        font-size: 30px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    
+    #loginForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: auto;
+        width: 100%;
+    }
+    
+    .usuario{
+        height: 25px;
+        width: 220px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        margin-left: 13px;
+        padding: 5px;
+    }
+    
+    .contraseña{
+        height: 25px;
+        width: 220px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        margin-left: 13px;
+        padding: 50px;
+    }
+    
+    .radioBox{
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        width: 100%;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .radioBox h2{
+        font-weight: 500;
+        font-size: 30px;
+        color: #fff;
+        margin-bottom: 8px;
+        width: 100%;
+        font-family: 'Anton', sans-serif;
+        margin-left: 8px;
+    }
+    
+    .botonesRadio{
+        width: 100%;
+        margin-left: 13px;  
+        margin-bottom: 25px;  
+    }
+    
+    .botonesRadio label{
+        display: inline-block;
+        cursor: pointer;
+        color: #fff;
+        position: relative;
+        padding: 5px 15px 5px 51px;
+        font-size: 15px;
+        border-radius: 5px;
+        height: 30px;
+    }
+    
+    
+    .botonJugar{
+        height: 40px;
+        width: 130px;
+        font-size: 25px;
+        font-weight: 900;
+        background-color: #ff1dc3da;
+        transform: translateX(-65px);
+    }
+    
+    .botonJugar:hover{
+        background-color: #000;
+    }
+    
+    /* SEGUNDA PAGINA*/
+    
+    .juegoTotal{
+        width: 100%;
+        height: 100vh;
+    }
+    
+    .juegoIzquierda{
+       opacity: 0;
+       visibility: hidden;
+       position: absolute;
+    }
+    
+    .juegoMedio{
+        height: 100%;
+        width: 80%;
+    }
+    
+    .miTablero{
+        height: 40px;
+        margin-left: 25px;
+    }
+    
+    .tarjetas{
+        width: 280px;
+        margin: 20px 0px 20px 25px;
+    }
+    
+    .emojiJuego{
+        height: 90px;
+        width: 65px;
+        margin: 2px;
+    }
+    
+    .emojiJuego.descartado{
+        background-repeat: no-repeat;
+    }
+    
+    
+    .selectPregunta{
+        width: 230px;
+        height: 50px;
+        margin-left: 25px;
+    }
+    
+    .selectPregunta p{
+    font-size: 20px;
+    }
+    
+    .juegoDerecha{
+    height: 670px;
+    margin-left: 25px;
+    }
+    
+    .juegoDerecha h3{
+    font-size: 8px;
+    }
+    
+    .juegoDerecha img{
+    height: 40px;
+    }
+    
+    .elegidoCPU{
+    height: 70px;
+    width: 70px;
+    background-size: 50px;
+    }
+    
+    .tableroCPU{
+    height: 90px;
+    width: 70px;
+    border: solid 3px #000;
+    }
+    
+    .emojiCPU{
+    height: 10px;
+    width: 10px;
+    }
+    
+    .miElegido{
+    height: 80px;
+    width: 70px;
+    }
+    
+    .cajaPreguntas{
+    top: 150px;
+    height: 650px;
+    width: 400px;
+    padding-bottom: 20px;
+    }
+    
+    .seccionPreguntas{
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    }
+    
+    .elegirSeccion{
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    margin-bottom: 0px;
+    }
+    
+    .cajaSecciones{
+    height: 280px;
+    width: 100%;
+    padding: 15px;
+    }
+    
+    .nombreSeccion{
+    height: 90px;
+    width: 165px;
+    font-size: 25px;
+    }
+    
+    .seccionVarios{
+    width: 330px;
+    }
+    
+    .volverPreguntas{
+    height: 50px;
+    width: 150px;
+    }
+    
+    .volverPreguntas.active{
+    opacity: 1;
+    }
+    
+    .tarjetasPreguntas{
+    width: 90%;
+    margin-bottom: 30px;
+    height: 90px;
+    }
+    
+    .emojiEnCaja{
+    height: 45px;
+    width: 34.4px;
+    }
+    
+    .pregunta{
+    width: 165px;
+    height: 45px;
+    font-size: 14px;
+    }
+    
+    .tarjetas.light{
+    transform: scale(1.3) translateX(35px);
+    }
+    
+    .elijoEmoji{
+    min-height: 170px;
+    width: 250px;
+    }
+    
+    .elijoEmoji.active{
+    opacity: 1;
+    transform: scale(1);
+    }
+    
+    .textoElijoEmoji{
+    font-size: 28px;
+    }
+    
+    
+    .toast{
+    min-height: 18px;
+    font-size: 13px;
+    }
+    
+    .ajustes{
+    width: 185px;
+    }
+    
+    .ajustes.active{
+    width: 185px;
+    animation: ajustesContainer410;
+    }
+    
+    .ajustes.inactive{
+    animation: ajustesContainerOff410;
+    }
+    
+    .iconoAjustes{
+    top: 10px;
+    left: 10px;
+    height: 35px;
+    }
+    
+    .iconoAjustes.active{
+    animation-name: iconoAjustes410;
+    }
+    
+    .iconoAjustes.inactive{
+    animation-name: iconoAjustesOff410;
+    }
+    
+    .iconoPregunta{
+    top: 60px;
+    left: 16px;
+    height: 35px;
+    width: 30px;
+    }
+    
+    .iconoPregunta.w410{
+        left: auto;
+        right: 16px;
+        top: 10px;
+    }
+    
+    .iconoPregunta:hover{
+    transform: scale(1.05);
+    }
+    
+    .objetivoJuego{
+    padding: 10px 0px 10px 62px;
+    }
+    
+    .objetivoJuego.inactive{
+    width: 350px;
+    height: 250px;
+    animation-name: iconoOff420;
+    }
+    .objetivoJuego.active{
+    width: 350px;
+    height: 250px;
+    animation-name: iconoOn420;
+    }
+    
+    .listaItem{
+    font-size: 25px;
+    padding: 5px;
+    }
+    
+    .listaItem.active{
+    animation-name: listaOn768;
+    }
+    
+    .listaItem.inactive{
+    animation-name: listaOff768;
+    }
+    
+    .subItem{
+    font-size: 20px;
+    padding: 5px;
+    animation-name: subItemOff;
+    }
+    
+    .nivelDiferente{
+    font-size: 20px;
+    padding: 5px;
+    animation-name: subItem;
+    
+    }
+    
+    .resultadoHistorial{
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+    animation-name: subItem;
+    }
+    
+    .tituloObjetivo{
+    font-size: 25px;
+    text-align: start;
+    padding-left:15px;
+    }
+    
+    .parrafoObjetivo{
+    width: 230px;
+    font-size: 15px;
+    }
+    
+    .flecha{
+        right: 54%;
+        height: 60px;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 300ms ease-in-out;
+        transform: scale(0.5);
+    }
+    
+    }
+
+
+/***********************************************/
+/*****************ANIMACIONES*******************/
+/***********************************************/
+
+
+
+@keyframes signosAparecen {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes overlay{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        background-color: #ff9ae4df;
+    }
+}
+
+@keyframes elegirEmoji {
+    from{
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+@keyframes ganadorFondo {
+    0%{
+        background-color: rgba(255, 47, 213, 0.486);
+    }
+    20%{
+        background-color: rgba(255, 242, 254, 0.614);
+    }
+    40%{
+        background-color: rgba(67, 255, 67, 0.593);
+    }
+    60%{
+        background-color: #ff82debc;
+    }
+    80%{
+        background-color: #80eaffbc;
+    }
+    100%{
+        background-color: rgba(67, 255, 67, 0.593);
+    }
+}
+
+
+@keyframes perdedorFondo {
+    from{
+        background-color: rgb(248, 120, 208);
+    }
+    to{
+        background-color: #000000;
+    }
+}
+
+@keyframes veredicto{
+    from{
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to{
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes bordesAnimados {
+    0%{
+        border: solid 4px greenyellow;
+    }
+    50%{
+        border: solid 4px yellow;
+    }
+    100%{
+        border: solid 4px greenyellow;
+    }
+}
+
+
+@keyframes flecha {
+    0%{
+        top: 60%;
+    }
+    50%{
+        top: 70%;
+    }
+    100%{
+        top: 60%;
+    }
+}
+
+
+
+@keyframes ajustesContainer{
+    0%{
+        width: 0px;
+        opacity: 0;
+        visibility: visible;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        width: 280px;
+        opacity: 1;
+    }
+}  
+
+@keyframes ajustesContainer768{
+    0%{
+        width: 0px;
+        opacity: 0;
+        visibility: visible;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        width: 225px;
+        opacity: 1;
+    }
+} 
+
+@keyframes ajustesContainer410{
+    0%{
+        width: 0px;
+        opacity: 0;
+        visibility: visible;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        width: 185px;
+        opacity: 1;
+    }
+} 
+
+@keyframes ajustesContainerOff{
+    0%{
+        width: 280px;
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        width: 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
+} 
+
+@keyframes ajustesContainerOff768{
+    0%{
+        width: 225px;
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        width: 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
+} 
+
+@keyframes ajustesContainerOff410{
+    0%{
+        width: 185px;
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        width: 0px;
+        opacity: 0;
+        visibility: hidden;
+    }
+} 
+
+@keyframes iconoAjustes{
+    0%{
+        left: 30px;
+        transform: rotate(0deg);
+    }
+    50%{
+        left: 220px;
+        transform: rotate(180deg);
+    }
+    100%{
+        left: 220px;
+    }
+} 
+
+@keyframes iconoAjustes600{
+    0%{
+        left: 10px;
+        transform: rotate(0deg);
+    }
+    50%{
+        left: 175px;
+        transform: rotate(180deg);
+    }
+    100%{
+        left: 175px;
+    }
+}  
+
+@keyframes iconoAjustes768{
+    0%{
+        left: 10px;
+        transform: rotate(0deg);
+    }
+    50%{
+        left: 175px;
+        transform: rotate(180deg);
+    }
+    100%{
+        left: 175px;
+    }
+}  
+
+@keyframes iconoAjustes410{
+    0%{
+        left: 10px;
+        transform: rotate(0deg);
+    }
+    50%{
+        left: 145px;
+        transform: rotate(180deg);
+    }
+    100%{
+        left: 145px;
+    }
+}
+
+@keyframes iconoAjustesOff{
+    0%{
+        left: 220px;
+        transform: rotate(0deg);
+    }
+    50%{
+        left: 30px;
+        transform: rotate(-180deg);
+    }
+    100%{
+        left: 30px;
+    }
+}  
+
+@keyframes iconoAjustesOff600{
+    0%{
+        left: 175px;
+        transform: rotate(0deg);
+    }
+    50%{
+        left: 5px;
+        transform: rotate(-180deg);
+    }
+    100%{
+        left: 5px;
+    }
+}  
+
+@keyframes iconoAjustesOff768{
+    0%{
+        left: 175px;
+        transform: rotate(0deg);
+    }
+    50%{
+        left: 10px;
+        transform: rotate(-180deg);
+    }
+    100%{
+        left: 10px;
+    }
+}  
+
+@keyframes iconoAjustesOff410{
+    0%{
+        left: 145px;
+        transform: rotate(0deg);
+    }
+    50%{
+        left: 10px;
+        transform: rotate(-180deg);
+    }
+    100%{
+        left: 10px;
+    }
+}
+
+
+
+@keyframes escondido {
+    from{
+        opacity:0;
+        transform: translate(0px);
+    }
+    to{
+        opacity: 0;
+        transform:translate(-150px);
+    }
+}
+@keyframes aparecido {
+    0%{
+        opacity:0;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+
+@keyframes iconoOn{
+   from{
+       opacity: 0;
+       transform: translatex(-300px);
+   }
+   to{
+       opacity: 1;
+       transform: translateX(0px);
+   }
+
+}
+
+@keyframes iconoOn420{
+    from{
+        opacity: 0;
+        transform: translatex(550px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+ 
+ }
+
+@keyframes iconoOff{
+    0%{
+        opacity: 1;
+        transform: translatex(0px);
+    }
+    50%{
+        opacity: 1;
+        transform: translateX(-500px);
+    }
+    100%{
+        transform: translateX(-500px);
+        opacity: 0;
+    }
+ 
+ }
+
+ @keyframes iconoOff420{
+    0%{
+        opacity: 1;
+        transform: translatex(0px);
+    }
+    50%{
+        opacity: 1;
+        transform: translateX(700px);
+    }
+    100%{
+        transform: translateX(700px);
+        opacity: 0;
+    }
+ 
+ }
+
+@keyframes opacityOn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes listaOn{
+    from{
+        font-size: 0;
+        opacity: 0;
+    }
+    to{
+        font-size: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes listaOn768{
+    from{
+        font-size: 0;
+        opacity: 0;
+    }
+    to{
+        font-size: 25px;
+        opacity: 1;
+    }
+}
+
+@keyframes listaOn600{
+    from{
+        font-size: 0;
+        opacity: 0;
+    }
+    to{
+        font-size: 20px;
+        opacity: 1;
+    }
+}
+
+@keyframes opacityOff{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes listaOff{
+    from{
+        font-size: 30px;
+        opacity: 1;
+    }
+    to{
+        font-size: 0px;
+        opacity: 0;
+    }
+}
+
+@keyframes listaOff768{
+    from{
+        font-size: 25px;
+        opacity: 1;
+    }
+    to{
+        font-size: 0px;
+        opacity: 0;
+    }
+}
+
+@keyframes listaOff600{
+    from{
+        font-size: 20px;
+        opacity: 1;
+    }
+    to{
+        font-size: 0px;
+        opacity: 0;
+    }
+}
+
+@keyframes subItem {
+    0%{
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    50%{
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes subItemOff {
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(-300px);
+        height: 0px;
+        padding: 0px;
+        margin-bottom: 0px;
+    }
+} 
+
+
+@keyframes ultimoEmoji {
+    0%{
+        transform: scale(1.1);
+        border: solid 5px greenyellow;
+    }
+    50%{
+        transform: scale(1.07);
+        border: solid 5px yellow;
+    }
+    100%{
+        transform: scale(1.1);
+        border: solid 5px greenyellow;
+    }
+} 
